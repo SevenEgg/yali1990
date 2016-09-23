@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            趣图
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="about">
+    <ion-card *ngFor='let tt of ts'>
+        <ion-card-content>
+        	<p class="tit-text">{{tt.title}}</p>
+            <a href="{{tt.thumburl}}"><img src="{{tt.thumburl}}"></a>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

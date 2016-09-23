@@ -1,0 +1,11 @@
+.home {
+}
+toolbar-title,ion-title,ion-header,.toolbar{
+	height: 0px;
+	min-height:0px;
+	display: none;
+}
+
+ion-card ion-card-content{
+	font-size: 1.5rem;
+}

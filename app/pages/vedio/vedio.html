@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>搞笑视频</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="vedio">
+  <ion-card *ngFor='let tt of ts'>
+      <ion-card-content>
+      	<p class="tit-text">标题:{{tt.desc}}</p>
+          <p>链接:<a href="{{tt.url}}">{{tt.url}}</a></p>
+
+          <ion-grid class="text">
+              <ion-row>
+                  <ion-col width-50>作者:{{tt.who}}</ion-col>
+                  <ion-col width-50 class="text-right">标签:{{tt.type}}</ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-card-content>
+  </ion-card>
+</ion-content>

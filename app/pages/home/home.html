@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>笑话</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-card *ngFor='let tt of ts'>
+        <ion-card-content>
+            {{tt.content}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>
