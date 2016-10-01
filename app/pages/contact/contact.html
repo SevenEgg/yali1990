@@ -7,15 +7,15 @@
 </ion-header>
 
 <ion-content>
+    <!-- 刷新页面 -->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+       <ion-refresher-content pullingText="正在刷新数据......">
+       </ion-refresher-content>
+     </ion-refresher>
+     <!-- 卡片 -->
     <ion-card *ngFor='let tt of ts'>
         <ion-card-content>
             <a href="{{tt.url}}"><img src="{{tt.url}}"></a>
-            <!-- <ion-grid class="text">
-                <ion-row>
-                    <ion-col width-50>妹子:{{tt.who}}</ion-col>
-                    <ion-col width-50 class="text-right">标签:{{tt.type}}</ion-col>
-                </ion-row>
-            </ion-grid> -->
         </ion-card-content>
     </ion-card>
 </ion-content>

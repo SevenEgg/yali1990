@@ -1,13 +1,18 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>笑话</ion-title>
+    <ion-title>段子</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="home">
-  <ion-card *ngFor='let tt of ts'>
-        <ion-card-content>
-            {{tt.content}}
+	<!-- 刷新页面 -->
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+	   <ion-refresher-content pullingText="正在刷新数据......">
+	   </ion-refresher-content>
+	 </ion-refresher>
+	<!-- 循环卡片 -->
+  	<ion-card *ngFor='let tt of ts'>
+        <ion-card-content [innerHtml]="tt.content">
         </ion-card-content>
     </ion-card>
 </ion-content>

@@ -6,6 +6,12 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding class="about">
+    <!-- 刷新页面 -->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+       <ion-refresher-content pullingText="正在刷新数据......">
+       </ion-refresher-content>
+     </ion-refresher>
+    <!-- 卡片 -->
     <ion-card *ngFor='let tt of ts'>
         <ion-card-content>
         	<p class="tit-text">{{tt.title}}</p>

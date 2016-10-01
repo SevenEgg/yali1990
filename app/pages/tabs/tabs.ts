@@ -15,11 +15,13 @@ export class TabsPage {
   public tab4Root: any;
 
   constructor() {
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
+    // 段子
     this.tab1Root = HomePage;
+    // 趣图
     this.tab2Root = AboutPage;
+    //妹子图
     this.tab3Root = ContactPage;
+    //搞笑视频
     this.tab4Root = VedioPage;
   }
 }

@@ -8,22 +8,20 @@ import { Http } from '@angular/http';
 export class VedioPage{
 	ts;
 	tt;
+  index;
   constructor(public navCtrl: NavController,private http: Http) {
   	this.ts = [];
   	this.tt = {};
+    this.index = true;
   }
 
- //载入完页面时触发请求
-  onPageDidEnter(){
-    console.log("已完全载入页面");
-    //请求api
+  getRes(){
+    //请求视频api
     this.http.get('http://gank.io/api/random/data/%E4%BC%91%E6%81%AF%E8%A7%86%E9%A2%91/20')
     .subscribe(data =>{
       //判断返回值
       if(data.json().error == false){
         this.ts = data.json().results;
-        // console.log(this.ts);
-        // console.log(this.ts[3].picUrl);
       }else{
         console.log('请求失败'+data.json().error);
       }
@@ -31,8 +29,26 @@ export class VedioPage{
     },erro=>{
       console.log('请求失败');
     });
+  }
+
+ //载入完页面时触发请求
+  onPageDidEnter(){
+    if(this.index == true){
+      this.getRes();
+      this.index = false;
+    }
     
   }
 
+
+  // 下拉刷新
+  doRefresh(refresher) {
+    //刷新数据
+    this.getRes();
+
+    setTimeout(() => {
+      refresher.complete();
+    }, 3000);
+  }
 
 }
